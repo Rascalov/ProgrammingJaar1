@@ -6,7 +6,7 @@ namespace Opdracht1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("!");
+            Console.WriteLine("Do you read me dude?");
         }
     }
 }
