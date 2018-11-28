@@ -92,8 +92,8 @@ namespace Opdracht4
             for (int i = 0; i < schaakbord.GetLength(0); i++)
             {
                 // maak de toekomstige positie aan
-                int r = positie.rij + MogelijkePositiesX[i];
-                int k = positie.kolom + MogelijkePositiesY[i];
+                int r = positie.rij + MogelijkePositiesY[i];
+                int k = positie.kolom + MogelijkePositiesX[i];
 
                 // check of die positie kan vanaf de start positie, zo ja, dan wordt die plek een geel sterretje (waarde 2)
                 // de x en y posities moeten groter zijn dan nul, anders stop je zo een negatief getal als positie in het bord
