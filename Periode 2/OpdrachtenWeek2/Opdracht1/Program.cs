@@ -71,9 +71,24 @@ namespace Opdracht1
             int hokjes, lengteRij, lengteKolom, getalR, getalK;
             lengteRij = matrix.GetLength(0);
             lengteKolom = matrix.GetLength(1);
-            hokjes = lengteRij * lengteKolom;
+            hokjes = lengteRij * lengteKolom; 
+
+            // bepaal met 1 getal waar hij in de rij en kolom moet staan
+            // vb. 1 = 0.0
+            int getal = 1;
+            //int locatie = getal/matrix.GetLength(1);
+
+            for (int i = 0; i < hokjes; i++)
+            {
+
+                matrix[(getal -1) / matrix.GetLength(1), (getal -1) % matrix.GetLength(0)] = getal;
+                getal++;
+              
+
+            }
 
 
+            /*
             getalR = 0;
             getalK = 0;
 
@@ -88,7 +103,7 @@ namespace Opdracht1
                     getalK = 0;
                 }
                 
-            }
+            } */
         }
 
         void PrintMatrixWithCross(int[,] matrix)
