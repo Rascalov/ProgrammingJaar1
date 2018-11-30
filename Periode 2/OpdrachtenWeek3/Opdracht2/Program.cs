@@ -19,8 +19,10 @@ namespace Opdracht2
             List<string> words = new List<string>();
             
             hangman.Init(SelectWord(ListOfWords(words)));
+            DisplayWord(hangman.guessedWord);
             Console.WriteLine("The secret word is: " + hangman.secretWord);
             Console.WriteLine("The guessed word is: " + hangman.guessedWord);
+
             Console.ReadKey();
         }
 
@@ -35,6 +37,8 @@ namespace Opdracht2
             {
                 Console.Write("{0} ", word[i]);
             }
+           
+
         }
         char ReadLetter(List<char> blacklistletters)
         {

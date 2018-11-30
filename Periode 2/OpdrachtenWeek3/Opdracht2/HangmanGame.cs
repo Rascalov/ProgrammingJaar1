@@ -10,6 +10,7 @@ namespace Opdracht2
 
         public void Init(string secretword)
         {
+            // de class secretWord wordt de secretword van de methode.
             secretWord = secretword;
             guessedWord = "";
             for (int i = 0; i < secretword.Length; i++)

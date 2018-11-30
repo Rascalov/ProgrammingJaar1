@@ -14,7 +14,7 @@ namespace Opdracht3
 
         void Start()
         {
-            RegularCandies[,] speelveld = new RegularCandies[9, 9];
+            RegularCandies[,] speelveld = new RegularCandies[9,9];
 
             InitCandies(speelveld);
             PrintCandies(speelveld);
