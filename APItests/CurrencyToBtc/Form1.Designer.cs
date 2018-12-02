@@ -141,6 +141,8 @@
             this.btnBigBlackRock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBigBlackRock.BackgroundImage")));
             this.btnBigBlackRock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBigBlackRock.FlatAppearance.BorderSize = 0;
+            this.btnBigBlackRock.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnBigBlackRock.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnBigBlackRock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBigBlackRock.Location = new System.Drawing.Point(246, 27);
             this.btnBigBlackRock.Name = "btnBigBlackRock";
