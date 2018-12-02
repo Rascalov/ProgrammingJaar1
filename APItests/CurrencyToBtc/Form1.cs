@@ -79,6 +79,7 @@ namespace CurrencyToBtc
             lblBitcoinAmount.Text = aantalBitCoins.ToString() + " Bitcoin(s)";
             lblBitcoinValue.Text = uitkomstBitcoin.ToString(GeldTeken(valutaCode) + "0.00");
             
+            
         }
 
         private char GeldTeken(string valutaTeken)
