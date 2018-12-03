@@ -121,6 +121,7 @@ namespace Opdracht2Redo
                     lijst.Add(woord);
                 }
             }
+            reader.Close();
             // oude lijst
             /*
             lijst.Add("boek");
