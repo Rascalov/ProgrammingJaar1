@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Opdracht2Redo
 {
@@ -106,7 +107,22 @@ namespace Opdracht2Redo
 
         List<string> WoordenLijst(List<string> lijst)
         {
+            // het idee: zorg ervoor dat woorden met minder dan drie letters niet in de lijst komen.
+            const int MINIMUM_LETTERS = 2;
+            StreamReader reader = new StreamReader("words.txt");
 
+            while (!reader.EndOfStream)
+            {
+                // store de readline in een string, als je de readline gaat vergelijken en dan de readline in de lijst zet
+                // dan pakt hij de de volgende (en dus verkeerde) readline.
+                string woord = reader.ReadLine();
+                if (woord.Length > MINIMUM_LETTERS)
+                {
+                    lijst.Add(woord);
+                }
+            }
+            // oude lijst
+            /*
             lijst.Add("boek");
             lijst.Add("koek");
             lijst.Add("zoek");
@@ -126,7 +142,7 @@ namespace Opdracht2Redo
             lijst.Add("heb");
             lijst.Add("geen");
             lijst.Add("leven");
-
+            */
 
             return lijst;
         }
@@ -134,6 +150,18 @@ namespace Opdracht2Redo
 
         string SelecteerWoord(List<string> woorden)
         {
+            // omdat ik bij de lijst al de woorden filter, is het hier niet nodig.
+            // maar om volgens de opdracht te werken:
+
+            /*
+            Random rnd = new Random();
+            string woord = "";
+            do
+            {
+               woord = woorden[rnd.Next(0, woorden.Count)]
+            } while (woord.Length < 3);
+            return woord;
+            */
             Random rnd = new Random();
             return woorden[rnd.Next(0, woorden.Count)];
         }
