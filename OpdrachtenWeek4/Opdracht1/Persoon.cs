@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Opdracht1
 {
-    class Class1
+    class Persoon
     {
+        public string naam;
+
     }
 }
