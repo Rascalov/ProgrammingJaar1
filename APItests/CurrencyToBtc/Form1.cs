@@ -100,12 +100,16 @@ namespace CurrencyToBtc
 
         private void SpeelGeluidAf()
         {
-
-            var path = "C:/Users/Project OS/Desktop/coin.wav";
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
-            player.Play();
-
-        }
+            try
+            {
+                var path = "C:/Users/Project OS/Desktop/coin.wav";
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(path);
+                player.Play();
+            }
+            catch (Exception e)
+            {
+                lblSoundError.Text = "Sound not available. " + e.Message;            }
+            }
 
         private void label4_Click(object sender, EventArgs e)
         {
