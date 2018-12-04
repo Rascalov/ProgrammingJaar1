@@ -46,7 +46,7 @@ namespace Opdracht3
                 if (ZitWoordInRegel(regel, woord))
                 {
                     ToonWoordInRegel(regel, woord);
-                  //  Console.WriteLine(regel);
+                  
                     Console.WriteLine();
                     teller++;
                 }
@@ -54,13 +54,12 @@ namespace Opdracht3
             return teller;
         }
 
-        // Holy fuck dit was leuk.
+        // good spul
         // Bastiaan, doe het niet, als je dit overneemt, ga je er niet op vooruit. Dus voordat je het opgeeft, vraag een leraar.
         // of 1 van je ouderjaars studenten.
         void ToonWoordInRegel(string regel, string woord)
         {
-            // we hebben een regel, en een zoekwoord.
-            // check voor zoekwoorden in de regel als de zoekwoord er is, maak m rood.
+            
             List<int> posities = new List<int>();
             int beginPositie;
             
@@ -73,7 +72,6 @@ namespace Opdracht3
                 beginPositie = regel.IndexOf(woord, beginPositie + woord.Length, StringComparison.CurrentCultureIgnoreCase);
             }
 
-            // nu moeten we per positie de characters van het woord omzetten naar een rode versie
 
             for (int i = 0; i < regel.Length; i++)
             {
@@ -95,11 +93,10 @@ namespace Opdracht3
                 }
                 
 
-                //Console.WriteLine(regel.Substring(posities[i], woord.Length));
                 
             }
             Console.WriteLine();
-                
+        }       
 
 
 
@@ -179,6 +176,6 @@ namespace Opdracht3
             
 
             
-        }
+        
     }
 }
