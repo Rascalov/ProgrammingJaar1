@@ -79,11 +79,12 @@ namespace Opdracht3
                 if (posities.Contains(i))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
+                    // voeg de opeenvolgende letters toe en maak ze rood
                     for (int j = 0; j < woord.Length; j++)
                     {
                         Console.Write(regel[i+j]);
                     }
-                    
+                    // zet de i weg van het gemarkeerde woord.
                     i = i + woord.Length -1;
                     Console.ResetColor();
                 }
