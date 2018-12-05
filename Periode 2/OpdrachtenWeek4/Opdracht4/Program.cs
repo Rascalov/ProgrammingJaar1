@@ -102,12 +102,10 @@ namespace Opdracht3
                         case RegularCandies.Jujube_Cluster:
                             Console.ForegroundColor = ConsoleColor.DarkMagenta;
                             break;
-                       
                     }
 
                     Console.Write("{0} ", tag);
-                    
-                    
+
                     if (k + 1 == candies.GetLength(1))
                     {
                         k = 0;
