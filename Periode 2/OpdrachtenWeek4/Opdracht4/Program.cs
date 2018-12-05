@@ -143,9 +143,6 @@ namespace Opdracht3
                     }
                 }
             }
-            
-
-
             return false;
         }
 
@@ -181,10 +178,6 @@ namespace Opdracht3
                     }
                 }
             }
-
-
-
-
             return false;
         }
 
