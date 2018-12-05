@@ -102,7 +102,7 @@ namespace Opdracht1
                 {
                     teller++;
                 }
-                if ((int)vak.pGrade < 3)
+                if (vak.pGrade < PracticalGrade.Sufficient)
                 {
                     teller++;
                 }
