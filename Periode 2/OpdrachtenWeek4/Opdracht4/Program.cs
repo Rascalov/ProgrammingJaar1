@@ -206,18 +206,29 @@ namespace Opdracht3
         RegularCandies[,] LeesSpeelveld(string bestandsnaam)
         {
             RegularCandies[,] speelveld = new RegularCandies[9, 9];
-            StreamReader reader = new StreamReader(bestandsnaam);    
-            for (int r = 0; r < speelveld.GetLength(0); r++)
+            StreamReader reader = new StreamReader(bestandsnaam);
+            // Als het niet lukt moet de reader ook gesloten worden anders kunnen we niet overschrijven.
+            try
             {
-                string regel = reader.ReadLine();
-                string[] getalStrings = regel.Split(' ');
-                for (int k = 0; k < speelveld.GetLength(1); k++)
+                for (int r = 0; r < speelveld.GetLength(0); r++)
                 {
-                    speelveld[r, k] = (RegularCandies)int.Parse(getalStrings[k]);
+                    string regel = reader.ReadLine();
+                    string[] getalStrings = regel.Split(' ');
+                    for (int k = 0; k < speelveld.GetLength(1); k++)
+                    {
+                        speelveld[r, k] = (RegularCandies)int.Parse(getalStrings[k]);
+                    }
                 }
+                reader.Close();
+                return speelveld;
             }
-            reader.Close();
-            return speelveld;
+            catch (Exception)
+            {
+                reader.Close();
+                throw;
+            }
+
+           
         }
        
 

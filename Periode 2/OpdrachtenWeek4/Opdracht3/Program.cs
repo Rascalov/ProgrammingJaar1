@@ -51,12 +51,12 @@ namespace Opdracht3
                     teller++;
                 }
             }
+            reader.Close();
             return teller;
         }
 
         // good spul
-        // Bastiaan, doe het niet, als je dit overneemt, ga je er niet op vooruit. Dus voordat je het opgeeft, vraag een leraar.
-        // of 1 van je ouderjaars studenten.
+        
         void ToonWoordInRegel(string regel, string woord)
         {
             
@@ -72,7 +72,7 @@ namespace Opdracht3
                 beginPositie = regel.IndexOf(woord, beginPositie + woord.Length, StringComparison.CurrentCultureIgnoreCase);
             }
 
-
+            // per character i kijken we of die gelijk staat aan de begin positie van het zoekwoord.
             for (int i = 0; i < regel.Length; i++)
             {
               
