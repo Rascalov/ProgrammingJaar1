@@ -28,7 +28,7 @@ namespace Opdracht3
                 }
                 catch 
                 {   
-                    Console.WriteLine("Corrupt gamfile '{0}'. Bestand is overschreven met nieuwe gegevens.", bestand);
+                    Console.WriteLine("Corrupt gamefile '{0}'. Bestand is overschreven met nieuwe gegevens.", bestand);
                     InitCandies(speelveld);
                     // error, file wordt ergens anders gebruikt.
                     SchrijfSpeelveld(speelveld, bestand);
