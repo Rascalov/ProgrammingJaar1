@@ -44,13 +44,7 @@ namespace Opdracht2Redo
         }
         public bool IsGeraden()
         {
-
-            if (geradenWoord == geheimWoord)
-            {
-                return true;
-            }
-
-            return false;
+            return (geradenWoord == geheimWoord);
         }
     }
 }

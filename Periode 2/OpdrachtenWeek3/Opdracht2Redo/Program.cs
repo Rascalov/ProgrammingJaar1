@@ -37,7 +37,7 @@ namespace Opdracht2Redo
         {
             char letter;
             Console.Write("Geef een letter ");
-            letter = char.Parse(Console.ReadLine());
+            letter = char.Parse(Console.ReadLine()); // kan ook met readKey().KeyChar
             while (verbodenLetter.Contains(letter))
             {
                 Console.WriteLine("Deze letter heb je al gebruikt!");
