@@ -26,9 +26,8 @@ namespace Opdracht3
                     speelveld = LeesSpeelveld(bestand);
                     Console.WriteLine("Spel succesvol geladen");
                 }
-                catch (Exception e)
-                {
-                    
+                catch 
+                {   
                     Console.WriteLine("Corrupt gamfile '{0}'. Bestand is overschreven met nieuwe gegevens.", bestand);
                     InitCandies(speelveld);
                     // error, file wordt ergens anders gebruikt.
@@ -226,9 +225,7 @@ namespace Opdracht3
             {
                 reader.Close();
                 throw;
-            }
-
-           
+            }  
         }
        
 
