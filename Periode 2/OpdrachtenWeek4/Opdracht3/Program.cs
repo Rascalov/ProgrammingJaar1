@@ -30,7 +30,7 @@ namespace Opdracht3
 
         bool ZitWoordInRegel(string regel, string woord)
         {
-            return (regel.ToLower().Contains(woord.ToLower())); // misschien beter? Korter en optimaal.
+            return (regel.ToLower().Contains(woord.ToLower())); 
         }
         int ZoekWoordInBestand(string bestandsnaam, string woord)
         {
@@ -59,10 +59,10 @@ namespace Opdracht3
             List<int> posities = new List<int>();
             int beginPositie;
             
-            // omdat je al buiten de while loop 1 aanmaakt, is een do-while niet beter?
+            // Omdat we weten dat het zoekwoord tenminste 1 keer voorkomt, zoeken we z'n positie op.
             beginPositie = regel.IndexOf(woord, StringComparison.CurrentCultureIgnoreCase);
 
-            // we maken een lijst van posities waar het woord is gevonden
+            // we maken een lijst van posities waar het woord is gevonden, door af te gaan op de positie van de eerste + de lengte van het woord
             while (beginPositie != -1)
             {
                 posities.Add(beginPositie);
