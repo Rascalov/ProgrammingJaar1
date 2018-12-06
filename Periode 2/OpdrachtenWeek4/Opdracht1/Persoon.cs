@@ -9,6 +9,5 @@ namespace Opdracht1
         public string naam;
         public string woonplaats;
         public int leeftijd;
-
     }
 }

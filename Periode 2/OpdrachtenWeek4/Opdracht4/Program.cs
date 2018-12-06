@@ -17,8 +17,8 @@ namespace Opdracht3
         {
             RegularCandies[,] speelveld = new RegularCandies[9, 9];
             string bestand;
-            Console.Write("Voer uw bestand in (Geef nieuwe naam op als u een nieuw bestand wilt) VERGEET NIET .txt: ");
-            bestand = Console.ReadLine();
+            Console.Write("Voer uw bestand in (Geef nieuwe naam op als u een nieuw bestand wilt): ");
+            bestand = Console.ReadLine() + ".txt";
             if (File.Exists(bestand))
             {
                 try
