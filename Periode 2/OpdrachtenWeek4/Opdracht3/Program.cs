@@ -18,6 +18,7 @@ namespace Opdracht3
             }
             
         }
+
         void Start()
         {
             Console.Write("Zoek woord: ");
@@ -32,6 +33,7 @@ namespace Opdracht3
         {
             return (regel.ToLower().Contains(woord.ToLower())); 
         }
+
         int ZoekWoordInBestand(string bestandsnaam, string woord)
         {
             int teller = 0;
@@ -51,8 +53,6 @@ namespace Opdracht3
             return teller;
         }
 
-        // good spul
-        
         void ToonWoordInRegel(string regel, string woord)
         {
             
@@ -72,29 +72,20 @@ namespace Opdracht3
             // per character i kijken we of die gelijk staat aan de begin positie van het zoekwoord.
             for (int i = 0; i < regel.Length; i++)
             {
-              
                 if (posities.Contains(i))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    // voeg de opeenvolgende letters toe en maak ze rood
-                    for (int j = 0; j < woord.Length; j++)
-                    {
-                        Console.Write(regel[i+j]);
-                    }
-                    // zet de i weg van het gemarkeerde woord.
-                    i = i + woord.Length -1;
+                    Console.Write(regel.Substring(i, woord.Length));
+                    i = i + woord.Length-1;
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.Write(regel[i]);
                 }
-                
-
-                
             }
             Console.WriteLine();
-        }       
+        }
 
 
 
@@ -102,6 +93,41 @@ namespace Opdracht3
 
 
 
+        // Hieronder een manier zonder substring, probleem: slomer en meer werk maar goed voor het begrijpen.
+        // voeg de opeenvolgende letters toe en maak ze rood
+        /* for (int j = 0; j < woord.Length; j++)
+         {
+             Console.Write(regel[i+j]);
+         }
+         i = i + woord.Length -1; */
+
+
+
+
+
+
+        // tweede poging, probleem: niet volgens de opdracht en maakt meer rood dan nodig.
+        /* String[] woorden = regel.Split(' ');
+         foreach(string woordV in woorden)
+         {
+             Console.ResetColor();
+             if (woordV.ToLower().Contains(woord.ToLower()))
+             {
+                 woord = woordV;
+                 Console.ForegroundColor = ConsoleColor.Red;
+                 Console.Write(woord + " ");
+
+             }
+             else
+             {
+                 Console.Write(woordV + " ");
+             }
+         }
+
+         */
+        // eerste poging. Problemen: sloom en print naast het zoekwoord( dus hij wordt 2 keer geprint, 1x rood, 1x wit)
+        /*string roodWoord;
+        int roodLocatie = regel.IndexOf(woord, StringComparison.CurrentCultureIgnoreCase);
 
 
 
@@ -109,71 +135,42 @@ namespace Opdracht3
 
 
 
-            // tweede poging, probleem: niet volgens de opdracht en maakt meer rood dan nodig.
-           /* String[] woorden = regel.Split(' ');
-            foreach(string woordV in woorden)
+        // if (regel.Substring(roodLocatie, woord.Length) == woord)
+        roodWoord = regel.Substring(roodLocatie, woord.Length);
+        // Console.Write(regel.Substring(roodLocatie, woord.Length));
+
+        char[] letters = regel.ToCharArray();
+        for (int i = 0; i < regel.Length; i++)
+        {
+            string vergelijk = "";
+            try
             {
-                Console.ResetColor();
-                if (woordV.ToLower().Contains(woord.ToLower()))
-                {
-                    woord = woordV;
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(woord + " ");
-                    
-                }
-                else
-                {
-                    Console.Write(woordV + " ");
-                }
+                 vergelijk = regel.Substring(i, woord.Length);
             }
-
-            */
-            // eerste poging. Problemen: sloom en print naast het zoekwoord( dus hij wordt 2 keer geprint, 1x rood, 1x wit)
-            /*string roodWoord;
-            int roodLocatie = regel.IndexOf(woord, StringComparison.CurrentCultureIgnoreCase);
-
-           
+            catch { }
 
 
-
-           
-
-            // if (regel.Substring(roodLocatie, woord.Length) == woord)
-            roodWoord = regel.Substring(roodLocatie, woord.Length);
-            // Console.Write(regel.Substring(roodLocatie, woord.Length));
-
-            char[] letters = regel.ToCharArray();
-            for (int i = 0; i < regel.Length; i++)
+            Console.ResetColor();
+            if (vergelijk.ToLower().Equals(woord.ToLower()) )
             {
-                string vergelijk = "";
-                try
-                {
-                     vergelijk = regel.Substring(i, woord.Length);
-                }
-                catch { }
-                
-                
-                Console.ResetColor();
-                if (vergelijk.ToLower().Equals(woord.ToLower()) )
-                {
-                    
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(regel.Substring(i, woord.Length));
-                }
-                else
-                {
-                    Console.Write(letters[i]);
-                }
-            } */
-            
 
-            
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(regel.Substring(i, woord.Length));
+            }
+            else
+            {
+                Console.Write(letters[i]);
+            }
+        } */
 
-            
 
-            
 
-            
-        
+
+
+
+
+
+
+
     }
 }
