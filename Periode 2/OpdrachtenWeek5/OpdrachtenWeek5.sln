@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandyCrushLogica", "CandyCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opdracht3Vertalen", "Opdracht3Vertalen\Opdracht3Vertalen.csproj", "{F4370625-9FE0-4896-9DFD-D6291BFD3B98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opdracht4 Lingo", "Opdracht4 Lingo\Opdracht4 Lingo.csproj", "{11AE142F-7901-413A-853E-BB678A4583BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F4370625-9FE0-4896-9DFD-D6291BFD3B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4370625-9FE0-4896-9DFD-D6291BFD3B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4370625-9FE0-4896-9DFD-D6291BFD3B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11AE142F-7901-413A-853E-BB678A4583BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11AE142F-7901-413A-853E-BB678A4583BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11AE142F-7901-413A-853E-BB678A4583BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11AE142F-7901-413A-853E-BB678A4583BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
