@@ -108,7 +108,7 @@ namespace Opdracht2Redo
         List<string> WoordenLijst(List<string> lijst)
         {
             // het idee: zorg ervoor dat woorden met minder dan drie letters niet in de lijst komen.
-            const int MINIMUM_LETTERS = 2;
+            const int MINIMUM_LETTERS = 3;
             StreamReader reader = new StreamReader("words.txt");
 
             while (!reader.EndOfStream)
@@ -116,7 +116,7 @@ namespace Opdracht2Redo
                 // store de readline in een string, als je de readline gaat vergelijken en dan de readline in de lijst zet
                 // dan pakt hij de de volgende (en dus verkeerde) readline.
                 string woord = reader.ReadLine();
-                if (woord.Length > MINIMUM_LETTERS)
+                if (woord.Length >= MINIMUM_LETTERS)
                 {
                     lijst.Add(woord);
                 }
