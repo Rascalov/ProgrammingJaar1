@@ -9,23 +9,51 @@ namespace Opdracht4_Lingo
 {
     class LingoGame
     {
-        public int pogingen;
         public string lingoWoord;
         public string playerWoord;
 
-        public string ReadPlayerWord()
+        public bool IsGuessed()
         {
-            string woord;
-            do
-            {
-                woord = LeesTools.LeesString("Enter a (5-letter) lingo word");
-            } while (woord.Length != Constanten.LINGO_LETTERS);
-            return woord;
+            return (playerWoord.Equals(lingoWoord));
         }
-        public bool IsGuessed(string lingoword, string playerword)
+        
+        public States[] EvaluateWord(string playerWord, string lingoWord)
         {
-            return (playerWoord.Equals(lingoword));
-        }
-    }
+            States[] results = new States[lingoWord.Length];
 
+            List<char> refLetters = new List<char>();
+
+            for (int i = 0; i < lingoWord.Length; i++)
+            {
+                if (char.ToLower(playerWord[i]) != char.ToLower(lingoWord[i]))
+                {
+                    refLetters.Add(lingoWord[i]);
+                }
+            }
+
+            for (int i = 0; i < lingoWord.Length; i++)
+            {
+                if (char.ToLower(playerWord[i]) == char.ToLower(lingoWord[i]))
+                {
+                    results[i] = States.Correct;
+                    
+                }
+                else
+                {
+                    if (refLetters.Contains(playerWord[i]))
+                    {
+                        results[i] = States.WrongPosition;
+                        refLetters.Remove(playerWord[i]);
+                    }
+                    else
+                    {
+                        results[i] = States.Incorrect;
+                    }
+                }
+            }
+
+            return results;
+        }
+
+    }
 }

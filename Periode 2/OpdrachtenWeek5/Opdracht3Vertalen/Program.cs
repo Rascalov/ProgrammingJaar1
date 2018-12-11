@@ -60,7 +60,8 @@ namespace Opdracht3Vertalen
                 }
                 invoer = LeesTools.LeesString("Enter a word: ");
             }
-        }        void ListAllWords(Dictionary<string, string> words)
+        }
+        void ListAllWords(Dictionary<string, string> words)
         {
             foreach (KeyValuePair<string, string> word in words)
             {
