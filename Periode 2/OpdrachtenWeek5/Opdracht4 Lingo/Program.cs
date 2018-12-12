@@ -23,7 +23,7 @@ namespace Opdracht4_Lingo
         {
             LingoGame lingo = new LingoGame();
 
-            string path = "/../C#/J1P2W3/Periode 2/woorden.txt";
+            string path = "woorden.txt";
             lingo.lingoWoord = (ChooseWord(ReadWords(path)));
 
             if (PlayLingo(lingo))

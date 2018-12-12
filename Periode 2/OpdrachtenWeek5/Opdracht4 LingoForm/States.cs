@@ -1,0 +1,1 @@
+﻿public enum States { Correct=1, Incorrect, WrongPosition}
