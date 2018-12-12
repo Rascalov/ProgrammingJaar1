@@ -17,10 +17,12 @@ namespace Opdracht4_LingoForm
      
     public partial class Form1 : Form
     {
-        int Pogingen = 5;
-        SoundPlayer Correct = new SoundPlayer("Correct.wav");
-        SoundPlayer Incorrect = new SoundPlayer("Incorrect.wav");
-        SoundPlayer WrongPostion = new SoundPlayer("Verkeerd.wav");
+        int Pogingen = 5, Wins = 0, Losses = 0;
+        SoundPlayer Correct = new SoundPlayer("../../Sounds/Correct.wav");
+        SoundPlayer Incorrect = new SoundPlayer("../../Sounds/Incorrect.wav");
+        SoundPlayer WrongPostion = new SoundPlayer("../../Sounds/Verkeerd.wav");
+        SoundPlayer Winner = new SoundPlayer("../../Sounds/Winnaar.wav");
+        SoundPlayer Verliezer = new SoundPlayer("../../Sounds/Verliezer.wav");
         LingoGame lingo = new LingoGame();
         int r = 0;
         Random rnd = new Random();
@@ -28,20 +30,19 @@ namespace Opdracht4_LingoForm
         {
 
             InitializeComponent();
-
             lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
-            label1.Text = lingo.lingoWoord;
-
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            lblError.Text = "";
+            lingo.playerWoord = ReadPlayerWord();
+            if (lingo.playerWoord.Length != 5)
+            {
+                lblError.Text = "Nee chef, 5 LETTERS";
+                return;
+            }
             Button[,] Buttons = new Button[,] {
                 { Rij0Btn0, Rij0Btn1, Rij0Btn2, Rij0Btn3, Rij0Btn4 },
                 { Rij1Btn0, Rij1Btn1, Rij1Btn2, Rij1Btn3, Rij1Btn4 },
@@ -49,24 +50,31 @@ namespace Opdracht4_LingoForm
                 { Rij3Btn0, Rij3Btn1, Rij3Btn2, Rij3Btn3, Rij3Btn4 },
                 { Rij4Btn0, Rij4Btn1, Rij4Btn2, Rij4Btn3, Rij4Btn4 }
             };
-
-            lingo.playerWoord = ReadPlayerWord(5);
-
             DisplayResults(lingo.playerWoord, lingo.EvaluateWord(lingo.playerWoord, lingo.lingoWoord), Buttons);
             Pogingen--;
+
+            CheckWinOrLose(Buttons);
+        }
+
+
+        void CheckWinOrLose(Button[,] Buttons)
+        {
             if (lingo.IsGuessed())
             {
+                Wins++;
+                Winner.Play();
                 MessageBox.Show("LINGO, GOED GEDAAN!");
                 Resetgame(Buttons);
             }
             else if (Pogingen == 0)
             {
-
+                Losses++;
+                Verliezer.Play();
                 MessageBox.Show($"Jammer, het woord was {lingo.lingoWoord}!");
                 Resetgame(Buttons);
             }
-            
         }
+
         void Resetgame(Button[,] Buttons)
         {
             foreach (Button b in Buttons)
@@ -78,8 +86,7 @@ namespace Opdracht4_LingoForm
             Pogingen = 5;
             r = 0;
             lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
-            label1.Text = lingo.lingoWoord;
-
+            txtInvoer.Text = "";
         }
 
         void SpeelGeluidAf(States status)
@@ -122,6 +129,7 @@ namespace Opdracht4_LingoForm
             }
             r++;
         }
+
         List<string> ReadWords(string file)
         {
             List<string> woordenlijst = new List<string>();
@@ -136,28 +144,17 @@ namespace Opdracht4_LingoForm
             }
             return woordenlijst;
         }
+
         string ChooseWord(List<string> woordenlijst)
         {
             return (woordenlijst[rnd.Next(0, woordenlijst.Count)]);
         }
-        string ReadPlayerWord(int lengte)
-        {
-            string woord;
 
-            try
-            {
-                woord = txtInvoer.Text;
-                if (woord.Length != 5)
-                {
-                    return null;
-                }
-                return woord;
-            }
-            catch (Exception)
-            {
-                label1.Text = "Woord is heeft geen lengte van 5!";
-                throw;
-            }
+        string ReadPlayerWord()
+        {
+            string woord = txtInvoer.Text;
+
+            return woord;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

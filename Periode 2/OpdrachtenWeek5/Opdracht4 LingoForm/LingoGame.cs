@@ -13,7 +13,7 @@ namespace Opdracht4_LingoForm
 
         public bool IsGuessed()
         {
-            return (playerWoord.Equals(lingoWoord));
+            return ((playerWoord.ToLower()).Equals((lingoWoord.ToLower())));
         }
         
         public States[] EvaluateWord(string playerWord, string lingoWord)
