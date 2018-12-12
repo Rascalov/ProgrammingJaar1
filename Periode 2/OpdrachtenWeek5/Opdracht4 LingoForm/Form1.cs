@@ -30,7 +30,7 @@ namespace Opdracht4_LingoForm
         {
 
             InitializeComponent();
-            lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
+            lingo.lingoWoord = ChooseWord(ReadWords("../../woorden.txt"));
             
         }
 
