@@ -85,7 +85,7 @@ namespace Opdracht4_LingoForm
             }
             Pogingen = 5;
             r = 0;
-            lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
+            lingo.lingoWoord = ChooseWord(ReadWords("../../woorden.txt"));
             txtInvoer.Text = "";
         }
 
