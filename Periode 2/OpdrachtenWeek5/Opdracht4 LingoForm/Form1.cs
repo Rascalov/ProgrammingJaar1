@@ -88,7 +88,7 @@ namespace Opdracht4_LingoForm
             lingo.lingoWoord = ChooseWord(ReadWords("../../woorden.txt"));
             txtInvoer.Text = "";
         }
-
+        // gaat niet normaal sloom op m'n laptop, dus wss ook op andere laptops.
         void SpeelGeluidAf(States status)
         {
             
