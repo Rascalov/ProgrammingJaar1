@@ -5,24 +5,34 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Opdracht4_LingoForm
 {
 
+     
     public partial class Form1 : Form
     {
-
-        
-        
-        int rij = 0;
+        int Pogingen = 5;
+        SoundPlayer Correct = new SoundPlayer("Correct.wav");
+        SoundPlayer Incorrect = new SoundPlayer("Incorrect.wav");
+        SoundPlayer WrongPostion = new SoundPlayer("Verkeerd.wav");
+        LingoGame lingo = new LingoGame();
+        int r = 0;
         Random rnd = new Random();
         public Form1()
         {
 
             InitializeComponent();
+
+            lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
+            label1.Text = lingo.lingoWoord;
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,102 +42,85 @@ namespace Opdracht4_LingoForm
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChooseWord(ReadWords("woorden.txt"));
-            
-        }
-        void DisplayResults(string playerword,States[] results)
-        {
-            Button[] buttonsRij0 = new Button[] { Rij0Btn0, Rij0Btn1, Rij0Btn2, Rij0Btn3, Rij0Btn4 };
-            Button[] buttonsRij1 = new Button[] { Rij1Btn0, Rij1Btn1, Rij1Btn2, Rij1Btn3, Rij1Btn4 };
-            Button[] buttonsRij2 = new Button[] { Rij2Btn0, Rij2Btn1, Rij2Btn2, Rij2Btn3, Rij2Btn4 };
-            Button[] buttonsRij3 = new Button[] { Rij3Btn0, Rij3Btn1, Rij3Btn2, Rij3Btn3, Rij3Btn4 };
-            Button[] buttonsRij4 = new Button[] { Rij4Btn0, Rij4Btn1, Rij4Btn2, Rij4Btn3, Rij4Btn4 };
-            switch (rij)
+            Button[,] Buttons = new Button[,] {
+                { Rij0Btn0, Rij0Btn1, Rij0Btn2, Rij0Btn3, Rij0Btn4 },
+                { Rij1Btn0, Rij1Btn1, Rij1Btn2, Rij1Btn3, Rij1Btn4 },
+                { Rij2Btn0, Rij2Btn1, Rij2Btn2, Rij2Btn3, Rij2Btn4 },
+                { Rij3Btn0, Rij3Btn1, Rij3Btn2, Rij3Btn3, Rij3Btn4 },
+                { Rij4Btn0, Rij4Btn1, Rij4Btn2, Rij4Btn3, Rij4Btn4 }
+            };
+
+            lingo.playerWoord = ReadPlayerWord(5);
+
+            DisplayResults(lingo.playerWoord, lingo.EvaluateWord(lingo.playerWoord, lingo.lingoWoord), Buttons);
+            Pogingen--;
+            if (lingo.IsGuessed())
             {
-                // misschien per rij een array van type button en loop per button.text.
-                case 0:
-                    for (int i = 0; i < playerword.Length; i++)
-                    {
-                        if (results[i] == States.Correct)
-                        {
-                            buttonsRij0[i].BackColor = Color.Red;
-                             
-                        }
-                        else if (results[i] == States.WrongPosition)
-                        {
-                            buttonsRij0[i].BackColor = Color.Yellow;
-                        }
+                MessageBox.Show("LINGO, GOED GEDAAN!");
+                Resetgame(Buttons);
+            }
+            else if (Pogingen == 0)
+            {
 
-                        buttonsRij0[i].Text = playerword[i].ToString();
-                    }
-                    break;
-                case 1:
-                    for (int i = 0; i < playerword.Length; i++)
-                    {
-                        if (results[i] == States.Correct)
-                        {
-                            buttonsRij1[i].BackColor = Color.Red;
-
-                        }
-                        else if (results[i] == States.WrongPosition)
-                        {
-                            buttonsRij1[i].BackColor = Color.Yellow;
-                        }
-
-                        buttonsRij1[i].Text = playerword[i].ToString();
-                    }
-                    break;
-                case 2:
-                    for (int i = 0; i < playerword.Length; i++)
-                    {
-                        if (results[i] == States.Correct)
-                        {
-                            buttonsRij2[i].BackColor = Color.Red;
-
-                        }
-                        else if (results[i] == States.WrongPosition)
-                        {
-                            buttonsRij2[i].BackColor = Color.Yellow;
-                        }
-
-                        buttonsRij2[i].Text = playerword[i].ToString();
-                    }
-                    break;
-                case 3:
-                    for (int i = 0; i < playerword.Length; i++)
-                    {
-                        if (results[i] == States.Correct)
-                        {
-                            buttonsRij3[i].BackColor = Color.Red;
-
-                        }
-                        else if (results[i] == States.WrongPosition)
-                        {
-                            buttonsRij3[i].BackColor = Color.Yellow;
-                        }
-
-                        buttonsRij3[i].Text = playerword[i].ToString();
-                    }
-                    break;
-                case 4:
-                    for (int i = 0; i < playerword.Length; i++)
-                    {
-                        if (results[i] == States.Correct)
-                        {
-                            buttonsRij4[i].BackColor = Color.Red;
-
-                        }
-                        else if (results[i] == States.WrongPosition)
-                        {
-                            buttonsRij4[i].BackColor = Color.Yellow;
-                        }
-
-                        buttonsRij4[i].Text = playerword[i].ToString();
-                    }
-                    break;
-
+                MessageBox.Show($"Jammer, het woord was {lingo.lingoWoord}!");
+                Resetgame(Buttons);
             }
             
+        }
+        void Resetgame(Button[,] Buttons)
+        {
+            foreach (Button b in Buttons)
+            {
+                b.ResetText();
+                b.BackColor = default(Color);
+                b.UseVisualStyleBackColor = true;
+            }
+            Pogingen = 5;
+            r = 0;
+            lingo.lingoWoord = ChooseWord(ReadWords("woorden.txt"));
+            label1.Text = lingo.lingoWoord;
+
+        }
+
+        void SpeelGeluidAf(States status)
+        {
+            
+            switch (status)
+            {
+                case States.Correct:
+                    Correct.Play();
+                    break;
+                case States.Incorrect:
+                    Incorrect.Play();
+                    break;
+                case States.WrongPosition:
+                    WrongPostion.Play();
+                    break;
+            }
+
+            
+        }
+
+        void DisplayResults(string playerword, States[] results, Button[,] Buttons)
+        {
+            for (int k = 0; k < Buttons.GetLength(1); k++)
+            {
+
+                if (results[k] == States.Correct)
+                {
+                    Buttons[r, k].BackColor = Color.Red;
+                }
+                else if (results[k] == States.WrongPosition)
+                {
+                    Buttons[r, k].BackColor = Color.Yellow;
+                }
+
+                Buttons[r, k].Text = playerword[k].ToString().ToUpper();
+                Buttons[r, k].Refresh();
+                SpeelGeluidAf(results[k]);
+                Thread.Sleep(250);
+            }
+            r++;
         }
         List<string> ReadWords(string file)
         {
@@ -151,14 +144,20 @@ namespace Opdracht4_LingoForm
         {
             string woord;
 
-            woord = txtInvoer.Text;
-            if (woord.Length != 5)
+            try
             {
-                label1.Text = "Woord is niet 5 letters lang!";
+                woord = txtInvoer.Text;
+                if (woord.Length != 5)
+                {
+                    return null;
+                }
+                return woord;
             }
-
-            return woord;
-           
+            catch (Exception)
+            {
+                label1.Text = "Woord is heeft geen lengte van 5!";
+                throw;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

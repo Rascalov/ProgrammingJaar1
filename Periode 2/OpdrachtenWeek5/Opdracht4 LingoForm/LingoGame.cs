@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Opdracht4_Lingo
+namespace Opdracht4_LingoForm
 {
     class LingoGame
     {
