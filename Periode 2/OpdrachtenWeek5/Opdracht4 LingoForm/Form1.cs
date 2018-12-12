@@ -14,9 +14,14 @@ namespace Opdracht4_LingoForm
 
     public partial class Form1 : Form
     {
+
+        
+        
+        int rij = 0;
         Random rnd = new Random();
         public Form1()
         {
+
             InitializeComponent();
         }
 
@@ -32,17 +37,97 @@ namespace Opdracht4_LingoForm
         }
         void DisplayResults(string playerword,States[] results)
         {
-            for (int r = 0; r < playerword.Length; r++)
+            Button[] buttonsRij0 = new Button[] { Rij0Btn0, Rij0Btn1, Rij0Btn2, Rij0Btn3, Rij0Btn4 };
+            Button[] buttonsRij1 = new Button[] { Rij1Btn0, Rij1Btn1, Rij1Btn2, Rij1Btn3, Rij1Btn4 };
+            Button[] buttonsRij2 = new Button[] { Rij2Btn0, Rij2Btn1, Rij2Btn2, Rij2Btn3, Rij2Btn4 };
+            Button[] buttonsRij3 = new Button[] { Rij3Btn0, Rij3Btn1, Rij3Btn2, Rij3Btn3, Rij3Btn4 };
+            Button[] buttonsRij4 = new Button[] { Rij4Btn0, Rij4Btn1, Rij4Btn2, Rij4Btn3, Rij4Btn4 };
+            switch (rij)
             {
-                for (int k = 0; k < playerword.Length; k++)
-                {
-                    int buttonRij = r;
-                    int buttonKolom = k;
-                    var huidigeButton = $"Rij{r}Btn{k}";
-                    
-                    
-                }
+                // misschien per rij een array van type button en loop per button.text.
+                case 0:
+                    for (int i = 0; i < playerword.Length; i++)
+                    {
+                        if (results[i] == States.Correct)
+                        {
+                            buttonsRij0[i].BackColor = Color.Red;
+                             
+                        }
+                        else if (results[i] == States.WrongPosition)
+                        {
+                            buttonsRij0[i].BackColor = Color.Yellow;
+                        }
+
+                        buttonsRij0[i].Text = playerword[i].ToString();
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < playerword.Length; i++)
+                    {
+                        if (results[i] == States.Correct)
+                        {
+                            buttonsRij1[i].BackColor = Color.Red;
+
+                        }
+                        else if (results[i] == States.WrongPosition)
+                        {
+                            buttonsRij1[i].BackColor = Color.Yellow;
+                        }
+
+                        buttonsRij1[i].Text = playerword[i].ToString();
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < playerword.Length; i++)
+                    {
+                        if (results[i] == States.Correct)
+                        {
+                            buttonsRij2[i].BackColor = Color.Red;
+
+                        }
+                        else if (results[i] == States.WrongPosition)
+                        {
+                            buttonsRij2[i].BackColor = Color.Yellow;
+                        }
+
+                        buttonsRij2[i].Text = playerword[i].ToString();
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < playerword.Length; i++)
+                    {
+                        if (results[i] == States.Correct)
+                        {
+                            buttonsRij3[i].BackColor = Color.Red;
+
+                        }
+                        else if (results[i] == States.WrongPosition)
+                        {
+                            buttonsRij3[i].BackColor = Color.Yellow;
+                        }
+
+                        buttonsRij3[i].Text = playerword[i].ToString();
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < playerword.Length; i++)
+                    {
+                        if (results[i] == States.Correct)
+                        {
+                            buttonsRij4[i].BackColor = Color.Red;
+
+                        }
+                        else if (results[i] == States.WrongPosition)
+                        {
+                            buttonsRij4[i].BackColor = Color.Yellow;
+                        }
+
+                        buttonsRij4[i].Text = playerword[i].ToString();
+                    }
+                    break;
+
             }
+            
         }
         List<string> ReadWords(string file)
         {
