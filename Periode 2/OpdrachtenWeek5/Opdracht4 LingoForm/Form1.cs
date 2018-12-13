@@ -13,16 +13,16 @@ using System.Windows.Forms;
 
 namespace Opdracht4_LingoForm
 {
-
+    
      
     public partial class Form1 : Form
     {
         int Pogingen = 5, Wins = 0, Losses = 0;
-        SoundPlayer Correct = new SoundPlayer("../../Sounds/Correct.wav");
-        SoundPlayer Incorrect = new SoundPlayer("../../Sounds/Incorrect.wav");
-        SoundPlayer WrongPostion = new SoundPlayer("../../Sounds/Verkeerd.wav");
-        SoundPlayer Winner = new SoundPlayer("../../Sounds/Winnaar.wav");
-        SoundPlayer Verliezer = new SoundPlayer("../../Sounds/Verliezer.wav");
+        private SoundPlayer Correct = new SoundPlayer("../../Sounds/Correct.wav");
+        private SoundPlayer Incorrect = new SoundPlayer("../../Sounds/Incorrect.wav");
+        private SoundPlayer WrongPostion = new SoundPlayer("../../Sounds/Verkeerd.wav");
+        private SoundPlayer Winner = new SoundPlayer("../../Sounds/Winnaar.wav");
+        private SoundPlayer Verliezer = new SoundPlayer("../../Sounds/Verliezer.wav");
         LingoGame lingo = new LingoGame();
         
 
