@@ -24,6 +24,8 @@ namespace Opdracht4_LingoForm
         SoundPlayer Winner = new SoundPlayer("../../Sounds/Winnaar.wav");
         SoundPlayer Verliezer = new SoundPlayer("../../Sounds/Verliezer.wav");
         LingoGame lingo = new LingoGame();
+        
+
         int r = 0;
         Random rnd = new Random();
         public Form1()
@@ -31,7 +33,11 @@ namespace Opdracht4_LingoForm
 
             InitializeComponent();
             lingo.lingoWoord = ChooseWord(ReadWords("../../woorden.txt"));
-            
+            Correct.Load();
+            Incorrect.Load();
+            WrongPostion.Load();
+            Winner.Load();
+            Verliezer.Load();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,7 +62,7 @@ namespace Opdracht4_LingoForm
             CheckWinOrLose(Buttons);
         }
 
-
+        
         void CheckWinOrLose(Button[,] Buttons)
         {
             if (lingo.IsGuessed())
