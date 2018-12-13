@@ -127,10 +127,10 @@ namespace Opdracht4_LingoForm
                 {
                     Buttons[r, k].BackColor = Color.Yellow;
                 }
-
+                SpeelGeluidAf(results[k]);
                 Buttons[r, k].Text = playerword[k].ToString().ToUpper();
                 Buttons[r, k].Refresh();
-                SpeelGeluidAf(results[k]);
+                
                 Thread.Sleep(250);
             }
             r++;
