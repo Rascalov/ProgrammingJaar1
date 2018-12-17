@@ -12,7 +12,7 @@ namespace Opdracht4_Lingo
     class Program
     {
 
-        int pogingen = 1;
+        int pogingNummer = 1;
         Random rnd = new Random();
         static void Main(string[] args)
         {
@@ -23,7 +23,7 @@ namespace Opdracht4_Lingo
         {
             LingoGame lingo = new LingoGame();
 
-            string path = "woorden.txt";
+            string path = "../../woorden.txt";
             lingo.lingoWoord = (ChooseWord(ReadWords(path)));
 
             if (PlayLingo(lingo))
@@ -42,12 +42,12 @@ namespace Opdracht4_Lingo
         {
             bool guessed = false;
 
-            while (!guessed && !(pogingen > 5) )
+            while (!guessed && !(pogingNummer > 5) )
             {
-                lingo.playerWoord = ReadPlayerWord(Constanten.LINGO_LETTERS);
-                DisplayResults(lingo.playerWoord, lingo.EvaluateWord(lingo.playerWoord, lingo.lingoWoord));
+                lingo.playerWoord = ReadPlayerWord(LingoGame.LETTER_AANTAL);
+                DisplayResults(lingo.playerWoord, lingo.EvaluateWord());
                 guessed = lingo.IsGuessed();
-                pogingen++;
+                pogingNummer++;
             }
 
             return guessed;
@@ -61,23 +61,25 @@ namespace Opdracht4_Lingo
             while (!reader.EndOfStream)
             {
                 string woord = reader.ReadLine();
-                if (woord.Length == Constanten.LINGO_LETTERS)
+                if (woord.Length == LingoGame.LETTER_AANTAL)
                 {
                     woordenlijst.Add(woord);
                 }
             }
             return woordenlijst;
         }
+
         string ChooseWord(List<string> woordenlijst)
         {
             return (woordenlijst[rnd.Next(0, woordenlijst.Count)]);
         }
+
         string ReadPlayerWord(int lengte)
         {
             string woord;
             do
             {
-                woord = LeesTools.LeesString($"Enter a ({Constanten.LINGO_LETTERS}-letter) lingo word (Attenpt {pogingen}): ");
+                woord = LeesTools.LeesString($"Enter a ({LingoGame.LETTER_AANTAL}-letter) lingo word (Attempt {pogingNummer}): ");
             }
             while (woord.Length != lengte);
             return woord;
