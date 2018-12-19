@@ -18,7 +18,7 @@ namespace Opdracht3Vertalen
         void Start()
         {
             Dictionary<string, string> woordenlijst = new Dictionary<string, string>();
-            TranslateWords(ReadWords("/../C#/J1P2W3/Periode 2/dictionary.csv"));
+            TranslateWords(ReadWords("../../dictionary.csv"));
             
         }
 
