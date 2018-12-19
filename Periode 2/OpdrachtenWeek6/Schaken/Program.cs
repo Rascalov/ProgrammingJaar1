@@ -90,8 +90,23 @@ namespace Schaken
         }
         void CheckMove(ChessPiece[,] chessboard, Position from, Position to)
         {
-            if(chessboard[from.row,from.column] != null 
-               && chessboard[to.row,to.column].color != chessboard[from.row, from.column].color)
+            if(chessboard[from.row,from.column] == null)
+            {
+                Console.WriteLine("Kan nier, er is geen chesspiece op die positie!");
+                return;
+            }
+            else if(chessboard[to.row,to.column] != null && chessboard[to.row,to.column].color == chessboard[from.row, from.column].color)
+            {
+                Console.WriteLine("Kan niet, deze chesspieces hebben dezelfde kleur!");
+                return;
+                    
+            }
+            else if(!validMove(chessboard[from.row, from.column], from, to))
+            {
+                Console.WriteLine("Kan niet, dit chesspiece kan niet zo bewegen");
+                return;
+            }
+            else
             {
                 DoMove(chessboard, from, to);
             }
@@ -104,11 +119,51 @@ namespace Schaken
             horDiff = Math.Abs(from.column - to.column);
             vertDiff = Math.Abs(from.row - to.row);
 
+            switch (chessPiece.type)
+            {
+                case ChessPieceType.Pawn:
+                    if (horDiff != 0 || vertDiff != 1)
+                    {
+                        return false;
+                    }
+                    break;
+                case ChessPieceType.Rook:
+                    if (horDiff * horDiff != 0)
+                    {
+                        return false;
+                    }
+                    break;
+                case ChessPieceType.Knight:
+                    if (horDiff * vertDiff != 2)
+                    {
+                        return false;
+                    }
+                    break;
+                case ChessPieceType.Bishop:
+                    if (horDiff != vertDiff)
+                    {
+                        return false;
+                    }
+                    break;
+                case ChessPieceType.King:
+                    if (horDiff != 0 && vertDiff != 1)
+                    {
+                        return false;
+                    }
+                    break;
+                case ChessPieceType.Queen:
+                    if (horDiff * vertDiff != 0 || horDiff != vertDiff)
+                    {
+                        return false;
+                    }
+                    break;
+
+            }
 
 
 
 
-            return false;
+            return true;
         }
 
         void PlayChess(ChessPiece[,] chessboard)
@@ -119,7 +174,8 @@ namespace Schaken
                 Position after = ReadPosition("Enter 'to position' (e.g. A3): ");
                 // CheckMove
                 // DoMove
-                DoMove(chessboard, before, after);
+                CheckMove(chessboard, before, after);
+               // DoMove(chessboard, before, after);
                 DisplayChessBoard(chessboard);
             }
         }
