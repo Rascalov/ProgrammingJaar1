@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChessGame.cs" />
     <Compile Include="ChessPiece.cs" />
     <Compile Include="Enumeraties.cs" />
     <Compile Include="Position.cs" />

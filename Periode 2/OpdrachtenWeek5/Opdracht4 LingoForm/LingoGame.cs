@@ -35,7 +35,6 @@ namespace Opdracht4_LingoForm
                 if (char.ToLower(playerWord[i]) == char.ToLower(lingoWord[i]))
                 {
                     results[i] = States.Correct;
-                    
                 }
                 else
                 {
