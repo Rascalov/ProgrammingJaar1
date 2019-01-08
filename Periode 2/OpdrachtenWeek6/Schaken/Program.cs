@@ -172,10 +172,7 @@ namespace Schaken
             {
                 Position before = ReadPosition("Enter 'from position' (e.g. A2): ");
                 Position after = ReadPosition("Enter 'to position' (e.g. A3): ");
-                // CheckMove
-                // DoMove
                 CheckMove(chessboard, before, after);
-               // DoMove(chessboard, before, after);
                 DisplayChessBoard(chessboard);
             }
         }
