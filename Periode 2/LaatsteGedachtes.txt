@@ -15,4 +15,5 @@ je hebt geschreven, check de bovenstaande conventies en veeg wat witregels weg a
 Optionele Snippets:
 
 cw + tab tab : Console.WriteLine();
+de rest van de snippets gebruik je al, dit is een geheugensteuntje
   
