@@ -1,0 +1,18 @@
+bestandlocaties in Constanten zetten.
+De reader ook sluiten na gebruik.
+
+Kijk per return of het simpeler kan of dat je iets dubbelop doet.
+Denk aan het gelijk returnen van iets ipv speciaal daarvoor een variable aan te maken 
+en vervolgens die te returnen.
+
+Kijk uit voor magic numbers, denk altijd of er een (bestaand) variabel gebruikt kan worden.
+
+voor bijv. : string woord = ""; woord = woord + iets; kan er ook woord += gebruikt worden, minder herhaling
+
+Leest de opdrachten (mits er tijd is) nog ff in z'n geheel voor en vergelijk het met de oplossing die 
+je hebt geschreven, check de bovenstaande conventies en veeg wat witregels weg als het kan.
+
+Optionele Snippets:
+
+cw + tab tab : Console.WriteLine();
+  
