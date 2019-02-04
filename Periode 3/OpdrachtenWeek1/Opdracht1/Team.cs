@@ -8,22 +8,21 @@ namespace Opdracht1
 {
     class Team
     {
-        public List<Programmer> programmeurLijst;
+        private List<Programmer> programmeurs;
         public Team()
         {
-            programmeurLijst = new List<Programmer>();
-            Programmer p1 = new Programmer("Peter", Specialty.CSharp);
-            Programmer p2 = new Programmer("Meter", Specialty.HTML);
-            Programmer p3 = new Programmer("Geter", Specialty.PHP);
-            Programmer p4 = new Programmer("Zeter", Specialty.Java);
+            programmeurs = new List<Programmer>();
         }
         public void AddProgrammer(Programmer p)
         {
-            programmeurLijst.Add(p);
+            programmeurs.Add(p);
         }
-        void PrintAllTeamMembers()
+        public void PrintAllTeamMembers()
         {
-            
+            foreach (Programmer p in programmeurs)
+            {
+                p.Print();
+            }
         }
     }
 }

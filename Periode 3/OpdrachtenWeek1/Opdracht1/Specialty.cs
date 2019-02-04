@@ -1,1 +1,1 @@
-﻿public enum Specialty {Java=1, CSharp, HTML, PHP}
+﻿public enum Specialty{Java = 1, CSharp,  HTML, PHP, Unknown}

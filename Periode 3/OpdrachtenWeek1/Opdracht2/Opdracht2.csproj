@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2DD9032-4940-4F9C-8517-F7BF5B3BF736}</ProjectGuid>
+    <ProjectGuid>{F2846192-9479-4239-A611-E03090FC5A61}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Opdracht1</RootNamespace>
-    <AssemblyName>Opdracht1</AssemblyName>
+    <RootNamespace>Opdracht2</RootNamespace>
+    <AssemblyName>Opdracht2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,11 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dobbelsteen.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Programmer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Specialty.cs" />
-    <Compile Include="Team.cs" />
+    <Compile Include="YahtzeeGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

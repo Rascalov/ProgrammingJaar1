@@ -8,8 +8,8 @@ namespace Opdracht1
 {
     class Programmer
     {
-        public string naam;
-        public Specialty specialiteit;
+        private string naam;
+        private Specialty specialiteit;
 
         public void Print()
         {
@@ -19,6 +19,10 @@ namespace Opdracht1
         {
             this.naam = naam;
             this.specialiteit = specialiteit;
+        }
+        public Programmer(string naam) :
+            this(naam,Specialty.Unknown)
+        {
         }
     }
 }
