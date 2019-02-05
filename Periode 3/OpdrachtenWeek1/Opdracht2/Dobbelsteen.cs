@@ -2,14 +2,14 @@
 class Dobbelsteen
 {
     public int waarde;
-    
+    Random rnd = new Random();
     public Dobbelsteen(Random rnd)
     {
-        rnd = new Random();
+        this.rnd = rnd;
     }
     public void Gooi()
     {
-        waarde = this.rnd.Next(1, 7);
+        waarde = rnd.Next(1, 7);
     }
     public void ToonWaarde()
     {
