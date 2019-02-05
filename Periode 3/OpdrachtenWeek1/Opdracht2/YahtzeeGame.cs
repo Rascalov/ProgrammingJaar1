@@ -3,7 +3,7 @@ using System.Linq;
 class YahtzeeGame
 {
     // initialize de array
-    Dobbelsteen[] dobbelstenen = new Dobbelsteen[5];
+    public Dobbelsteen[] dobbelstenen = new Dobbelsteen[5];
     public YahtzeeGame()
     {
         Random rnd = new Random();
