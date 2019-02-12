@@ -8,19 +8,11 @@ namespace Opdracht1
 {
     class Boek
     {
-        private string titel, auteur;
+        public string titel, auteur;
         public double prijs;
-
-        public Boek(string titel, string auteur, double prijs)
+        public virtual void PrintBoekInfo()
         {
-            this.titel = titel;
-            this.auteur = auteur;
-            this.prijs = prijs;
-        }
-
-        public void PrintBoekInfo()
-        {
-            Console.WriteLine($"{titel}, by {auteur}, {prijs}");
+            Console.WriteLine($"[Book] '{titel}', by {auteur}, {prijs:0.00}");
         }
     }
 }

@@ -9,13 +9,7 @@ namespace Opdracht1
     class BoekHandel : Boek
     {
         private List<Boek> boekenLijst = new List<Boek>();
-
-        public BoekHandel() :
-            base("", "", 0)
-        {
-
-        }
-
+        
         public void VoegToe(Boek boek)
         {
             boekenLijst.Add(boek);
@@ -28,7 +22,7 @@ namespace Opdracht1
                 boek.PrintBoekInfo();
                 totaal += boek.prijs;
             }
-            Console.WriteLine($"\n Total Price: {totaal}");
+            Console.WriteLine($"\nTotal Price: {totaal}");
         }
 
     }
