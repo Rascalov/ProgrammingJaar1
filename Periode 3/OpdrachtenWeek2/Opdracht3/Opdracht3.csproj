@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5408648-9C4B-4944-BFDC-F79F770966AC}</ProjectGuid>
+    <ProjectGuid>{6D596579-9B38-4288-9722-083E6ACE89CE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Opdracht2</RootNamespace>
-    <AssemblyName>Opdracht2</AssemblyName>
+    <RootNamespace>Opdracht3</RootNamespace>
+    <AssemblyName>Opdracht3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,15 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardSuit.cs" />
-    <Compile Include="DeckOfCards.cs" />
-    <Compile Include="PlayingCard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
