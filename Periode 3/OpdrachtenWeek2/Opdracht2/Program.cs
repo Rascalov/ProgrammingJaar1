@@ -17,13 +17,12 @@ namespace Opdracht2
         {
             DeckOfCards deck = new DeckOfCards();
             deck.Print();
-            Console.WriteLine(deck.allPlayingCards.Count);
+            
             deck.Shuffle();
 
             Console.WriteLine();
             deck.Print();
 
-            Console.WriteLine(deck.allPlayingCards.Count);
             
         }
     }

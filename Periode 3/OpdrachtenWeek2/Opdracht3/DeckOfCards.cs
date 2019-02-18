@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Opdracht2
+namespace Opdracht3
 {
     public class DeckOfCards
     {
@@ -30,12 +30,12 @@ namespace Opdracht2
         {
             foreach (PlayingCard card in allPlayingCards)
             {
-                Console.WriteLine(card.ToString());
+                Console.WriteLine(card.ToString()); 
             }
         }
         public void Shuffle()
         {
-            allPlayingCards = allPlayingCards.OrderBy(a => Guid.NewGuid()).ToList(); // kan ook met een random object
+            allPlayingCards = allPlayingCards.OrderBy(a => Guid.NewGuid()).ToList();
         }
     }
 }

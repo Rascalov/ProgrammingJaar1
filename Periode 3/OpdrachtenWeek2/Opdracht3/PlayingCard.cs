@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Opdracht2
+namespace Opdracht3
 {
     public class PlayingCard
     {
@@ -37,7 +37,7 @@ namespace Opdracht2
                     name = rank.ToString();
                     break;
             }
-            return $"{name} of {suit}"; 
+            return $"{name} of {suit}";
         }
     }
 }
