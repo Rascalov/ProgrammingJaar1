@@ -23,7 +23,8 @@ namespace Opdracht2
             Console.WriteLine();
             deck.Print();
 
-            
+            
+
         }
     }
 }

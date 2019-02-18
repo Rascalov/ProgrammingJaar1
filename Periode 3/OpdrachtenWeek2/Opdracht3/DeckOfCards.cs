@@ -35,7 +35,7 @@ namespace Opdracht3
         }
         public void Shuffle()
         {
-            allPlayingCards = allPlayingCards.OrderBy(a => Guid.NewGuid()).ToList();
+            allPlayingCards = allPlayingCards.OrderBy(a => Guid.NewGuid()).ToList(); // kan ook met een random object
         }
     }
 }
