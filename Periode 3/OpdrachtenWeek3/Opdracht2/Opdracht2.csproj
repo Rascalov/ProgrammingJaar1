@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9FD34784-0A8A-463E-9E75-060BFA9C27CE}</ProjectGuid>
+    <ProjectGuid>{CFFF9535-10E9-4F13-AE48-5D1BD39D03DE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Opdracht1</RootNamespace>
-    <AssemblyName>Opdracht1</AssemblyName>
+    <RootNamespace>Opdracht2</RootNamespace>
+    <AssemblyName>Opdracht2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boek.cs" />
-    <Compile Include="BoekHandel.cs" />
-    <Compile Include="BoekHandelItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TijdSchrift.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
