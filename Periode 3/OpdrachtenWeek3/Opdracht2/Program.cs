@@ -10,6 +10,15 @@ namespace Opdracht2
     {
         static void Main(string[] args)
         {
+            Program myProgram = new Program();
+            myProgram.Start();
+        }
+
+        void Start()
+        {
+            Klant klant1 = new Klant("", new DateTime(1909, 08, 01));
+            klant1.printinschrijfdatum();
+            
         }
     }
 }
