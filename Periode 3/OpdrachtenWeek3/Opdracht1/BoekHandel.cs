@@ -20,9 +20,9 @@ namespace Opdracht1
             foreach (BoekHandelItem item in ItemLijst)
             {
                 item.PrintItemInfo();
-                totaal += item.prijs;
+                totaal += item.TotaalPrijs;
             }
-            Console.WriteLine($"\nTotal Price: {totaal}");
+            Console.WriteLine($"\nTotal Price: {totaal:0.00}");
         }
 
     }

@@ -8,16 +8,22 @@ namespace Opdracht1
 {
     class TijdSchrift : BoekHandelItem
     {
-        public DayOfWeek dagVanUitgave;
-        public TijdSchrift(string titel, double prijs, DayOfWeek dagVanUitgave)
+        private DayOfWeek dagVanUitgave;
+        public DayOfWeek DagVanUitgave
         {
-            this.titel = titel;
-            this.prijs = prijs;
+            get { return dagVanUitgave; }
+            set { dagVanUitgave = value; }
+        }
+        public TijdSchrift(string titel, double prijs, DayOfWeek dagVanUitgave, int count)
+        {
+            this.Titel = titel;
+            this.Prijs = prijs;
             this.dagVanUitgave = dagVanUitgave;
+            this.Count = count;
         }
         public override void PrintItemInfo()
         {
-            Console.WriteLine($"[Magazine] {titel} - release day: {dagVanUitgave}, {prijs:0.00}");
+            Console.WriteLine($"[Magazine] {Titel} - release day: {dagVanUitgave}, {Prijs:0.00} ({Count}x)");
         }
     }
 }

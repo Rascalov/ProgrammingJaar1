@@ -14,7 +14,24 @@ namespace Opdracht1
             get { return titel; }
             set { titel = value; }
         }
-        public double prijs;
+        private double prijs;
+        public double Prijs
+        {
+            get { return prijs; }
+            set { prijs = value; }
+        }
+        private int count;
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
+        public double TotaalPrijs
+        {
+            get { return Count * Prijs; }
+        }
+
         public virtual void PrintItemInfo()
         {
 

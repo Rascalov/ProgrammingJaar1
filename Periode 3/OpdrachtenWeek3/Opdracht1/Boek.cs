@@ -8,16 +8,21 @@ namespace Opdracht1
 {
     class Boek : BoekHandelItem
     {
-        public string auteur;
-        public Boek(string titel, string auteur, double prijs)
+        private string auteur;
+        public string Auteur
         {
-            this.titel = titel;
+            get { return auteur; }
+        }
+        public Boek(string titel, string auteur, double prijs, int count)
+        {
+            this.Titel = titel;
             this.auteur = auteur;
-            this.prijs = prijs; 
+            this.Prijs = prijs;
+            this.Count = count;
         }
         public override void PrintItemInfo()
         {
-            Console.WriteLine($"[Book] '{titel}', by {auteur}, {prijs:0.00}");
+            Console.WriteLine($"[Book] '{Titel}', by {auteur}, {Prijs:0.00} ({Count}x)");
         }
     }
 }
