@@ -16,8 +16,11 @@ namespace Opdracht2
 
         void Start()
         {
-            Klant klant1 = new Klant("", new DateTime(1909, 08, 01));
-            klant1.printinschrijfdatum();
+            Klant klant1 = new Klant();
+            klant1.Naam = "Tim";
+            klant1.GeboorteDatum = new DateTime(1999, 08, 01);
+
+            Console.WriteLine(klant1.InschrijfDatum);
             
         }
     }

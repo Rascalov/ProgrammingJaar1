@@ -8,42 +8,60 @@ namespace Opdracht2
 {
     class Klant
     {
+        // bij non automatic properties call bij constructor de private versie
         private DateTime MINIMAAL_TIJD = new DateTime(1910);
-        private string Naam;
-        private DateTime Geboortejaar, InschrijfDatum;
-        public string naam { get { return naam; } private set
+        private string naam;
+        private DateTime geboorteDatum, inschrijfDatum;
+        public Klant()
+        {
+            inschrijfDatum = InschrijfDatum;
+        }
+        public string Naam
+        {
+            get { return naam; }
+            set
             {
                 if (value != "")
                 {
-                    Naam = value;
+                    naam = value;
                 }
             }
         }
-        private DateTime geboortejaar
+        public DateTime GeboorteDatum
         {
-            get { return Geboortejaar; }
-            set { if (Geboortejaar.Year < DateTime.Today.Year && Geboortejaar.Year > MINIMAAL_TIJD.Year)  Geboortejaar = value;  }
-        }
-        public DateTime inschrijfDatum
-        {   get { return InschrijfDatum; }
-            private set
+            get { return geboorteDatum; }
+            set
             {
-
+                if (value.Year > MINIMAAL_TIJD.Year && value.Year < DateTime.Today.Year)
+                {
+                    geboorteDatum = value;
+                }
             }
         }
-
-        public Klant(string naam, DateTime geboortejaar)
+        public DateTime InschrijfDatum
         {
-            this.naam = naam;
-            this.geboortejaar = geboortejaar;
-            this.inschrijfDatum = DateTime.Today;
+            get { return inschrijfDatum; }
+            private set { inschrijfDatum = DateTime.Today.Date; }
         }
-
-        public void printinschrijfdatum()
+        public int Leeftijd
         {
-            Console.WriteLine(InschrijfDatum.ToString("dd/MM/yyyy"));
-            Console.WriteLine(Geboortejaar.ToString("dd/MM/yyyy"));
-            Console.WriteLine($"deze naam ---> {Naam} <----");
+            get
+            {
+                int geboorte = int.Parse(geboorteDatum.ToString("yyyymmdd"));
+                int vandaag = int.Parse(DateTime.Today.ToString("yyyymmdd"));
+                return (vandaag - geboorte) / 10000;
+            }
         }
+        public bool RechtOpKorting
+        {
+            get
+            {
+                int geboorte = int.Parse(inschrijfDatum.ToString("yyyymmdd"));
+                int vandaag = int.Parse(DateTime.Today.ToString("yyyymmdd"));
+                return ((vandaag - geboorte) / 10000) >= 1;
+            }
+        }
+        
+
     }
 }
