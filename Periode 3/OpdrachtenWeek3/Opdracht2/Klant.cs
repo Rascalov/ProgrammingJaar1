@@ -11,11 +11,26 @@ namespace Opdracht2
         // bij non automatic properties call bij constructor de private versie
         private DateTime MINIMAAL_TIJD = new DateTime(1910);
         private string naam;
-        private DateTime geboorteDatum, inschrijfDatum;
-        public Klant()
+        private DateTime geboorteDatum;
+        public DateTime InschrijfDatum { get; private set; }
+        // ctor met datum van vandaaf als inschrijfDatum
+
+            // moet je uberhaupt ctors hebben?
+        /*
+        public Klant(string naam, DateTime geboorteDatum)
         {
-            inschrijfDatum = InschrijfDatum;
+            InschrijfDatum = DateTime.Today.Date;
+            Naam = naam;
+            GeboorteDatum = geboorteDatum;
         }
+        // ctor met een door de user bepaalde inschrijfDatum, voor scenario testing
+        public Klant(string naam, DateTime geboorteDatum, DateTime inschrijfDatum) :
+            this(naam, geboorteDatum)
+        {
+            InschrijfDatum = inschrijfDatum;
+        }
+        */
+       
         public string Naam
         {
             get { return naam; }
@@ -38,30 +53,24 @@ namespace Opdracht2
                 }
             }
         }
-        public DateTime InschrijfDatum
-        {
-            get { return inschrijfDatum; }
-            private set { inschrijfDatum = DateTime.Today.Date; }
-        }
         public int Leeftijd
         {
             get
             {
-                int geboorte = int.Parse(geboorteDatum.ToString("yyyymmdd"));
-                int vandaag = int.Parse(DateTime.Today.ToString("yyyymmdd"));
-                return (vandaag - geboorte) / 10000;
+                var today = DateTime.Today;
+                var age = today.Year - geboorteDatum.Year;
+                if (geboorteDatum > today.AddYears(-age)) age--;
+                return age;
             }
         }
         public bool RechtOpKorting
         {
             get
             {
-                int geboorte = int.Parse(inschrijfDatum.ToString("yyyymmdd"));
-                int vandaag = int.Parse(DateTime.Today.ToString("yyyymmdd"));
-                return ((vandaag - geboorte) / 10000) >= 1;
+                double inschrijfD = double.Parse(InschrijfDatum.ToString("yyyyMMdd"));
+                double vandaag = double.Parse(DateTime.Today.ToString("yyyyMMdd"));
+                return (Math.Floor((vandaag - inschrijfD) / 10000)) >= 1;
             }
         }
-        
-
     }
 }
