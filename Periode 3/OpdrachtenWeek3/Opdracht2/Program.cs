@@ -12,35 +12,32 @@ namespace Opdracht2
         {
             Program myProgram = new Program();
             myProgram.Start();
+            Console.ReadKey();
         }
 
         void Start()
         {
-            /*
-            Klant klant1 = new Klant("Tim", new DateTime(1999, 08, 01));
-            klant1.Naam = "Jack";
-            klant1.Print();
-
-            Klant klant2 = new Klant("Tim Sanou", new DateTime(1990, 08, 01), new DateTime(2018, 02, 03));
-            klant2.Print();
-            */
-            Kaartje krt1 = new Kaartje();
-            krt1.FilmNaam = "";
-            krt1.AanvangTijd = new DateTime(2019, 02, 25, 19, 15, 00);
-            krt1.Zaal = 1432;
-            krt1.MinimumLeeftijd = 132123;
-
-
-        }
-        void PrintKlant(Klant k)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(k.Naam);
-            Console.ResetColor();
-            Console.WriteLine($"Date of birth: {k.GeboorteDatum.ToString("dd/MM/yyyy")}\n" +
-                              $"age: {k.Leeftijd}\n" +
-                              $"date of registration: {k.InschrijfDatum.ToString("dd/MM/yyyy")}\n" +
-                              $"discount: {k.RechtOpKorting}\n");
+            // Kaartjes
+            Kaartje c1 = new Kaartje("Bohemian Rhapsody", 1, 10.50m, 6, new DateTime(2019, 02, 23, 21, 30, 00));
+            Kaartje c2 = new Kaartje("The Progidy", 4, 10.50m, 16, new DateTime(2019, 02, 23, 22, 00, 00));
+            Kaartje c3 = new Kaartje("Green Book", 5, 10.50m, 12, new DateTime(2019, 02, 25, 19, 00, 00));
+            // Klantjes
+            Klant k1 = new Klant("Lionel Messi", new DateTime(1987, 06, 24), new DateTime(2019, 02, 20));
+            Klant k2 = new Klant("Piet Paulusma", new DateTime(1956, 12, 15), new DateTime(2017, 02, 20));
+            // Reserveringtjes
+            Reservering r1 = new Reservering(k1);
+            r1.Kaartjes.Add(c1);
+            r1.Kaartjes.Add(c2);
+            r1.Kaartjes.Add(c3);
+            Reservering r2 = new Reservering(k2);
+            r2.Kaartjes.Add(c1);
+            r2.Kaartjes.Add(c2);
+            r2.Kaartjes.Add(c3);
+            // Printjes
+            k1.Print();
+            k2.Print();
+            r1.Print();
+            r2.Print();
         }
     }
 }

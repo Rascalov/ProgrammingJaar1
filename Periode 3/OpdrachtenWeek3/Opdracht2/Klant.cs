@@ -14,9 +14,6 @@ namespace Opdracht2
         private DateTime geboorteDatum;
         public DateTime InschrijfDatum { get; private set; }
         // ctor met datum van vandaaf als inschrijfDatum
-
-            // moet je uberhaupt ctors hebben?
-        /*
         public Klant(string naam, DateTime geboorteDatum)
         {
             InschrijfDatum = DateTime.Today.Date;
@@ -29,8 +26,7 @@ namespace Opdracht2
         {
             InschrijfDatum = inschrijfDatum;
         }
-        */
-       
+        
         public string Naam
         {
             get { return naam; }
@@ -71,6 +67,18 @@ namespace Opdracht2
                 double vandaag = double.Parse(DateTime.Today.ToString("yyyyMMdd"));
                 return (Math.Floor((vandaag - inschrijfD) / 10000)) >= 1;
             }
+        }
+
+        public void Print()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(naam);
+            Console.ResetColor();
+            Console.WriteLine($"date of birth: {GeboorteDatum.ToString("dd/MM/yyyy")}");
+            Console.WriteLine($"age: {Leeftijd}");
+            Console.WriteLine($"date of registration: {InschrijfDatum.ToString("dd/MM/yyyy")}");
+            Console.WriteLine($"discount: {RechtOpKorting}");
+            Console.WriteLine();
         }
     }
 }

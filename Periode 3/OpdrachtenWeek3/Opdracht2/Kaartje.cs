@@ -11,8 +11,8 @@ namespace Opdracht2
         private string filmNaam;
         private int zaal;
         private DateTime aanvangsTijd;
-        private decimal prijs;
         private int minimumLeeftijd;
+        public decimal Prijs { get; private set; }
         public string FilmNaam
         {
             get { return filmNaam; }
@@ -78,14 +78,16 @@ namespace Opdracht2
         {
             get
             {
-                return (DateTime.Today.DayOfWeek == DayOfWeek.Monday || DateTime.Today.DayOfWeek == DayOfWeek.Tuesday);
+                return (AanvangTijd.DayOfWeek == DayOfWeek.Monday || AanvangTijd.DayOfWeek == DayOfWeek.Tuesday);
             }
         }
-        public Kaartje()
+        public Kaartje(string naam, int zaal, decimal prijs, int minLeeftijd, DateTime startTijd)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("creating tickets");
-            Console.ResetColor();
+            FilmNaam = naam;
+            Zaal = zaal;
+            Prijs = prijs;
+            MinimumLeeftijd = minLeeftijd;
+            AanvangTijd = startTijd;
         }
     }
 }
