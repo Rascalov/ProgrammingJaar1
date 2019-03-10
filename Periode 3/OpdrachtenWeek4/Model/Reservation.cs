@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Reservation
+    public class Reservation
     {
         private int id;
-        public int Id { get { return id; } set { } }
+        public int Id { get { return id; } set { id = value; } }
         public Book Book { get; set; }
         public Customer Customer { get; set; }
         public DateTime ReservationDateTime { get; private set;}
@@ -23,7 +23,7 @@ namespace Model
         }
         public override string ToString()
         {
-            return $"Id: {Id}\n ";
+            return $" ";
         }
 
     }

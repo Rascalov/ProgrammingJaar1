@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Customer
+    public class Customer
     {
         private int id;
-        public int Id { get { return id; } set { } }
+        public int Id { get { return id; } set { id = value; } }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -24,7 +24,7 @@ namespace Model
         }
         public override string ToString()
         {
-            return base.ToString();
+            return $"{FullName} ({EmailAddress})";
         }
     }
 }

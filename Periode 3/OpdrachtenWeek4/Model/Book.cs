@@ -9,11 +9,8 @@ namespace Model
     public class Book
     {
         private int id;
-        public int Id
-        {
-            get { return id; }
-            set { }
-        }
+        public int Id { get { return id; }set { id = value; } }
+
         public string Author { get; set; }
         public string Title { get; set; }
 
