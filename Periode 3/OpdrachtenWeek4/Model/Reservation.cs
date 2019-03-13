@@ -23,7 +23,7 @@ namespace Model
         }
         public override string ToString()
         {
-            return $" ";
+            return $"{Customer.FullName} {Book.Title}";
         }
 
     }

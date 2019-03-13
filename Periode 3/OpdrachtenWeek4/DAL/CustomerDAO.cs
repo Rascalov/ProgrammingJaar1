@@ -14,7 +14,7 @@ namespace DAL
         private SqlConnection dbConnection;
         public CustomerDAO()
         {
-            string connString = ConfigurationManager.ConnectionStrings["DBConncectionString"].ConnectionString;
+            string connString = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
             dbConnection = new SqlConnection(connString);
         }
         public List<Customer> GetAll()
@@ -43,6 +43,14 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(@"SELECT * FROM tim_prog3_Customer WHERE Id = @Id", dbConnection);
             cmd.Parameters.AddWithValue("@Id", id);
             SqlDataReader reader = cmd.ExecuteReader();
+            Customer customer = null;
+            if (reader.Read())
+            {
+                customer = ReadCustomer(reader);
+            }
+            reader.Close();
+            dbConnection.Close();
+            return customer;
         }
     }
 }

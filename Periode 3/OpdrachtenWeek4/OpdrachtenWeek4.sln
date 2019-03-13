@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{7050E670-F0C3-4C09-A23F-04EEA462EE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{132949FE-FDF4-40B0-BC23-DE5183D7CF2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7050E670-F0C3-4C09-A23F-04EEA462EE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7050E670-F0C3-4C09-A23F-04EEA462EE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7050E670-F0C3-4C09-A23F-04EEA462EE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132949FE-FDF4-40B0-BC23-DE5183D7CF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132949FE-FDF4-40B0-BC23-DE5183D7CF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132949FE-FDF4-40B0-BC23-DE5183D7CF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132949FE-FDF4-40B0-BC23-DE5183D7CF2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

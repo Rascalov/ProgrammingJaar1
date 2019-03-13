@@ -7,15 +7,15 @@
       <FileName>Book.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Customer" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+  <Class Name="Model.Customer">
+    <Position X="3.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAEAAAAAAAIAEAAAAAAAAAAAAAAAAAAAAAgAAAgg=</HashCode>
       <FileName>Customer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Model.Reservation" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Class Name="Model.Reservation">
+    <Position X="5.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAECAAAAAAAAAABEAAAAAAAIAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Reservation.cs</FileName>
