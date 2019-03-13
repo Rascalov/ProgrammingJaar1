@@ -37,5 +37,12 @@ namespace DAL
         {
             return new Customer((int)reader["Id"], (string)reader["First Name"], (string)reader["Last Name"], (string)reader["EmailAddress"] );
         }
+        public Customer GetByID(int id)
+        {
+            dbConnection.Open();
+            SqlCommand cmd = new SqlCommand(@"SELECT * FROM tim_prog3_Customer WHERE Id = @Id", dbConnection);
+            cmd.Parameters.AddWithValue("@Id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+        }
     }
 }
