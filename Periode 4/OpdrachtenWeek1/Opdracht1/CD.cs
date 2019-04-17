@@ -15,7 +15,7 @@ namespace Opdracht1
         }
         public override string ToString()
         {
-            return $"[CD] {Title} - {Artist}, {Price} ({NumberOfItems}x)";
+            return $"[CD] {Title} - {Artist}, {Price:0.00} ({NumberOfItems}x)";
         }
     }
 }

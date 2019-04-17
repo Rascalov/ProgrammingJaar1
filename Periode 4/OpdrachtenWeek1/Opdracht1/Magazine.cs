@@ -15,7 +15,7 @@ namespace Opdracht1
         }
         public override string ToString()
         {
-            return $"[Magazine] {Title} - {ReleaseDay}, {Price} ({NumberOfItems}x)";
+            return $"[Magazine] {Title} - {ReleaseDay}, {Price:0.00} ({NumberOfItems}x)";
         }
     }
 }

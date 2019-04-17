@@ -15,7 +15,7 @@ namespace Opdracht1
         }
         public override string ToString()
         {
-            return $"[Book] {Author} - {Title}, {Price} ({NumberOfItems}x)";
+            return $"[Book] {Author} - {Title}, {Price:0.00} ({NumberOfItems}x)";
         }
     }
 }
