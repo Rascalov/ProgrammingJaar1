@@ -14,7 +14,6 @@ namespace Opdracht3
         public Pencil(int maxToWrite)
         {
             this.maxToWrite = maxToWrite;
-            nrOfCharsWritten = 0;
         }
         public void AfterSharpening()
         {
@@ -47,12 +46,6 @@ namespace Opdracht3
                     Console.ResetColor();
                     break;
             }
-
-
-            
-                
-                
-            
         }
     }
 }
