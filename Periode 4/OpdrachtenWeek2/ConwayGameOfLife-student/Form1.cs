@@ -16,7 +16,7 @@ namespace ConwayGameOfLife
     private void Form1_Load(object sender, EventArgs e)
     {
       // create a game
-      game = new ConwayGameOfLife();
+      game = new HighLife();
 
       // start the timer
       timer1.Enabled = true;

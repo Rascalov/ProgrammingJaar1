@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace ConwayGameOfLife
 {
-  public class ConwayGameOfLife
+  public abstract class ConwayGameOfLife
   {
     const int WIDTH = 300;
     const int HEIGHT = 140;
@@ -91,19 +91,7 @@ namespace ConwayGameOfLife
       }
     }
 
-    private bool CellShouldLive(bool livingCell, int neighbourCount)
-    {
-      // with 3 neighbour cell will live
-      if (neighbourCount == 3)
-        return true;
-
-      // live cell with 2 neighbours stays alive
-      if (livingCell && neighbourCount == 2)
-        return true;
-
-      // dead cell
-      return false;
-    }
+        public abstract bool CellShouldLive(bool livingCell, int neighbourCount);
 
     /// <summary>Count live neighbours of given cell.</summary>
     /// <param name="space"></param>
