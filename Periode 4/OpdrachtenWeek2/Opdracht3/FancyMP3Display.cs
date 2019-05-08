@@ -14,7 +14,7 @@ namespace Opdracht3
         }
         public void Update(Song song)
         {
-            Console.WriteLine($"Fancy display: '{song.Titel}' by {song.Titel} ({song.Duur.Minute}:{song.Duur.Second})");
+            Console.WriteLine($"Fancy display: '{song.Titel}' by {song.Bandnaam} ({song.Duur.Minute}:{song.Duur.Second})");
         }
     }
 }
