@@ -15,7 +15,11 @@ namespace Opdracht1
         }
         void Start()
         {
-
+            BatchProcessor processor = new BatchProcessor();
+            processor.AddDataloader(new CallDataLoader());
+            processor.AddDataloader(new TwitterDataLoader());
+            processor.AddDataloader(new SensorDataLoader());
+            processor.ProcessCurrentBatches();
         }
     }
 }

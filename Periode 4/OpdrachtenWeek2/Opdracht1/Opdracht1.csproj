@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BatchProcessor.cs" />
     <Compile Include="BigDataLoader.cs" />
     <Compile Include="CallDataLoader.cs" />
     <Compile Include="Program.cs" />
