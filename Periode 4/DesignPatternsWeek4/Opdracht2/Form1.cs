@@ -42,7 +42,12 @@ namespace Opdracht2
 
         private void changeLife_Click(object sender, EventArgs e)
         {
-            game.lifeBehaviour.ChangeLife(game);
+            if (game.lifeBehaviour is Life)
+            game.lifeBehaviour = new HighLife();
+            else
+            {
+                game.lifBehaviour = new Life();
+            }
         }
     }
 }

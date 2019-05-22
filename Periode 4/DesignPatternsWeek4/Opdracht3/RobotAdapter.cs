@@ -1,4 +1,4 @@
-﻿opdrachusing System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,11 @@ namespace Opdracht3
 {
     class RobotAdapter : IAttacker
     {
-        Robot robot = new Robot();
+        Robot robot; // = new Robot();
+        public RobotAdapter(Robot robot)
+        {
+            this.robot = robot;
+        }
         public void AssignDriver()
         {
             robot.MoveByPerson(); 

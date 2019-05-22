@@ -20,7 +20,8 @@ namespace Opdracht3
             tank.AssignDriver();
 
             // create a robot (and let it move by a person)
-            RobotAdapter robot = new RobotAdapter();
+            Robot robot = new Robot();
+            RobotAdapter robot = new RobotAdapter(robot);
             robot.AssignDriver();
             Console.WriteLine();
 

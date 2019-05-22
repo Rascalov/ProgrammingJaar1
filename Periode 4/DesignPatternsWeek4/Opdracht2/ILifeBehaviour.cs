@@ -9,6 +9,6 @@ namespace Opdracht2
     public interface ILifeBehaviour// : ConwayGameOfLife
     {
         bool CellShouldLive(bool livingCell, int neighbourCount);
-        void ChangeLife(ConwayGameOfLife conwayGameOfLife);
+      //  void ChangeLife(ConwayGameOfLife conwayGameOfLife);
     }
 }

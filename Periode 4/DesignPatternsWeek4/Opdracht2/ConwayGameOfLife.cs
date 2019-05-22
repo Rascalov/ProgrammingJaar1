@@ -8,7 +8,7 @@ namespace Opdracht2
         const int WIDTH = 300;
         const int HEIGHT = 140;
         const int LIVECHANCE = 20; // each cell has a change to be (initially) alive
-        public ILifeBehaviour lifeBehaviour;
+        public ILifeBehaviour lifeBehaviour { get; set; } // ...
         private bool[,] space;
         SolidBrush liveBrush = new SolidBrush(Color.Red);
         SolidBrush deadBrush = new SolidBrush(Color.LightGray);
