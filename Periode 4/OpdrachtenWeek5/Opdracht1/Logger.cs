@@ -8,7 +8,7 @@ namespace Opdracht1
 {
     class Logger
     {
-        private int numberOfLines;
+        private int numberOfLines = 0;
         private static Logger uniqueInstance;
         private Logger()
         {
@@ -20,6 +20,11 @@ namespace Opdracht1
                 uniqueInstance = new Logger();
             }
             return uniqueInstance;
+        }
+        public void Log(string system, string text)
+        {
+            numberOfLines++;
+            Console.WriteLine($"{numberOfLines} - [{system}] {text}");
         }
     }
 }

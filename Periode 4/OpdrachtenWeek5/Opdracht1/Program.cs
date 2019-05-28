@@ -10,6 +10,14 @@ namespace Opdracht1
     {
         static void Main(string[] args)
         {
+            Program myProgram = new Program();
+            myProgram.Start();
+        }
+        void Start()
+        {
+            MainSystem mainSystem = new MainSystem();
+            mainSystem.DoSomeMainWork();
+            Console.ReadKey();
         }
     }
 }
