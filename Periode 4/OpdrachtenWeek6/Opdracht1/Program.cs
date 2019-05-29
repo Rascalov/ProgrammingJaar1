@@ -15,12 +15,7 @@ namespace Opdracht1
         }
         void Start()
         {
-            // hier hoorde eigenlijk de start
-            MainSystem mainSystem = new MainSystem();
-            mainSystem.DoSomeMainWork();
-            // hier hoorde eigenlijk de finish
-            Console.ReadKey();
-            
+
         }
     }
 }

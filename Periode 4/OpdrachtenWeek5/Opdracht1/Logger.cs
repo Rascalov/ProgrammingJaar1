@@ -10,9 +10,11 @@ namespace Opdracht1
     {
         private int numberOfLines = 0;
         private static Logger uniqueInstance;
+
         private Logger()
         {
         }
+
         public static Logger GetInstance()
         {
             if (uniqueInstance == null)
@@ -21,6 +23,7 @@ namespace Opdracht1
             }
             return uniqueInstance;
         }
+
         public void Log(string system, string text)
         {
             numberOfLines++;
