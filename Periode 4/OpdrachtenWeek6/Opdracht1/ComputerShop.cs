@@ -6,8 +6,29 @@ using System.Threading.Tasks;
 
 namespace Opdracht1
 {
-    class ComputerShop
+    abstract class ComputerShop : IProcessor, IMonitor, IHardDisk
     {
+        public ComputerShop()
+        {
 
+        }
+
+        public void AssembleMachine()
+        {
+            PerformOperation();
+            StoreData();
+            Display();
+        }
+        public virtual void Display()
+        {
+        }
+
+        public virtual void PerformOperation()
+        {
+        }
+
+        public virtual void StoreData()
+        {
+        }
     }
 }

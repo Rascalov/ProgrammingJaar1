@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComputerShop.cs" />
+    <Compile Include="HighBudgetShop.cs" />
     <Compile Include="IHardDisk.cs" />
     <Compile Include="IMonitor.cs" />
     <Compile Include="IProcessor.cs" />
+    <Compile Include="LowBudgetShop.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

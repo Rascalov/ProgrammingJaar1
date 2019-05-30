@@ -15,7 +15,17 @@ namespace Opdracht1
         }
         void Start()
         {
+            Console.WriteLine("[shop creating expensive computers]");
+            HighBudgetShop highBudgetShop = new HighBudgetShop();
+            highBudgetShop.AssembleMachine();
 
+            Console.WriteLine();
+
+            Console.WriteLine("[shop creating cheap computers]");
+            LowBudgetShop lowBudgetShop = new LowBudgetShop();
+            lowBudgetShop.AssembleMachine();
+
+            Console.ReadKey();
         }
     }
 }
