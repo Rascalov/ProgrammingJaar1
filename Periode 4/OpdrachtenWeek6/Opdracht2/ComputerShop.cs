@@ -14,17 +14,5 @@ namespace Opdracht1
             factory.StoreData();
             factory.Display();
         }
-
-        public virtual void Display()
-        {
-        }
-
-        public virtual void PerformOperation()
-        {
-        }
-
-        public virtual void StoreData()
-        {
-        }
     }
 }
