@@ -10,9 +10,9 @@ namespace Opdracht1
     {
         public void AssembleMachine(ComputerFactory factory)
         {
-            factory.PerformOperation();
-            factory.StoreData();
-            factory.Display();
+            factory.CreateProcessor().PerformOperation();
+            factory.CreateHardDisk().StoreData();
+            factory.CreateMonitor().Display();
         }
     }
 }

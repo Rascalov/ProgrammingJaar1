@@ -18,14 +18,14 @@ namespace Opdracht1
             // Twijfelde of deze opdracht nog de Low- en Highbudget shop classes ging gebruiken, leek mij van niet. 
 
             Console.WriteLine("[shop creating expensive computers]");
-            HighBudgetFactory highBudgetFactory = new HighBudgetFactory();
+            ComputerFactory highBudgetFactory = new HighBudgetFactory();
             ComputerShop hightBudgetShop = new ComputerShop();
             hightBudgetShop.AssembleMachine(highBudgetFactory);
 
             Console.WriteLine();
 
             Console.WriteLine("[shop creating cheap computers]");
-            LowBudgetFactory lowBudgetFactory = new LowBudgetFactory();
+            ComputerFactory lowBudgetFactory = new LowBudgetFactory();
             ComputerShop lowBudgetShop = new ComputerShop();
             lowBudgetShop.AssembleMachine(lowBudgetFactory);
 

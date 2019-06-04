@@ -46,6 +46,8 @@
     <Compile Include="ComputerFactory.cs" />
     <Compile Include="ComputerShop.cs" />
     <Compile Include="FastHardDisk.cs" />
+    <Compile Include="FastMonitor.cs" />
+    <Compile Include="FastProcessor.cs" />
     <Compile Include="HighBudgetFactory.cs" />
     <Compile Include="IHardDisk.cs" />
     <Compile Include="IMonitor.cs" />
@@ -53,6 +55,9 @@
     <Compile Include="LowBudgetFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlowHardDisk.cs" />
+    <Compile Include="SlowMonitor.cs" />
+    <Compile Include="SlowProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

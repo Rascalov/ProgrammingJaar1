@@ -6,20 +6,12 @@ using System.Threading.Tasks;
 
 namespace Opdracht1
 {
-    abstract class ComputerFactory : IProcessor, IMonitor, IHardDisk
+    abstract class ComputerFactory
     {
-        public virtual void Display()
-        {
-           
-        }
+        public abstract IMonitor CreateMonitor();
 
-        public virtual void PerformOperation()
-        {
-            
-        }
+        public abstract IProcessor CreateProcessor();
 
-        public virtual void StoreData()
-        {
-        }
+        public abstract IHardDisk CreateHardDisk();
     }
 }

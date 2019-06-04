@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Opdracht1
 {
-    class FastHardDisk : IHardDisk
+    class SlowProcessor : IProcessor
     {
-        public void StoreData()
+        public void PerformOperation()
         {
-            Console.WriteLine("storing data very quickly...");
+            Console.WriteLine("performing operation not so quickly...");
         }
     }
 }

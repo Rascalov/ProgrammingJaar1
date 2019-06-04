@@ -8,19 +8,19 @@ namespace Opdracht1
 {
     class HighBudgetFactory : ComputerFactory
     {
-        public override void Display()
+        public override IMonitor CreateMonitor()
         {
-            Console.WriteLine("displaying stuff very nice...");
+            return new FastMonitor();
         }
 
-        public override void PerformOperation()
+        public override IProcessor CreateProcessor()
         {
-            Console.WriteLine("performing operation very quickly...");
+            return new FastProcessor(); 
         }
 
-        public override void StoreData()
+        public override IHardDisk CreateHardDisk()
         {
-            Console.WriteLine("storing data very quickly...");
+            return new FastHardDisk();
         }
     }
 }
