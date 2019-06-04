@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ComputerFactory.cs" />
     <Compile Include="ComputerShop.cs" />
+    <Compile Include="FastHardDisk.cs" />
     <Compile Include="HighBudgetFactory.cs" />
     <Compile Include="IHardDisk.cs" />
     <Compile Include="IMonitor.cs" />

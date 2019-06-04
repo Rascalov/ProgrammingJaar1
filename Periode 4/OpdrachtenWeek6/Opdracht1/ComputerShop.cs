@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Opdracht1
 {
-    abstract class ComputerShop : IProcessor, IMonitor, IHardDisk
+    abstract class ComputerShop
     {
         public ComputerShop()
         {
@@ -15,20 +15,24 @@ namespace Opdracht1
 
         public void AssembleMachine()
         {
-            PerformOperation();
-            StoreData();
-            Display();
+            CreateProcessor().PerformOperation();
+            CreateHardDisk().StoreData();
+            CreateMonitor().Display();
         }
-        public virtual void Display()
+        // misschein abstract ipv virtual?
+        public virtual IMonitor CreateMonitor()
         {
-        }
-
-        public virtual void PerformOperation()
-        {
+            return null;
         }
 
-        public virtual void StoreData()
+        public virtual IProcessor CreateProcessor()
         {
+            return null;
+        }
+
+        public virtual IHardDisk CreateHardDisk()
+        {
+            return null;
         }
     }
 }
