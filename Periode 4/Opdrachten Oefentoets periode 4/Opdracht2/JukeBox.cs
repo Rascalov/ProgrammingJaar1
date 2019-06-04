@@ -21,7 +21,7 @@ namespace Opdracht2
         }
         public void SelectSingle(int single)
         {
-            CurrentSingle = Singles[single];
+            CurrentSingle = Singles[single - 1];
         }   
         public void Stoppen()
         {
