@@ -11,8 +11,8 @@ namespace Opdracht2
     {
         static void Main(string[] args)
         {
-            List<IVinylSingle> singles = ReadSingles("singles.csv");
-            List<IVinylAlbum> albums = ReadAlbums("albums.csv");
+            List<IVinylSingle> singles = ReadSingles("../../singles.csv");
+            List<IVinylAlbum> albums = ReadAlbums("../../albums.csv");
 
             // create jukebox
             JukeBox jukeBox = new JukeBox(singles);
